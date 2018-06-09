@@ -1,0 +1,103 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+/*    background-color: #789edb;*/
+}
+
+header {
+    padding: 20px 0;
+}
+
+header .row,
+footer .row {
+    display: flex;
+    align-items: center;
+}
+
+header h1 {
+    font-weight: 700;
+    margin: 0;
+}
+
+header nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/*
+.navbar-default {
+    background-color: #789edb;
+    border-color: #E7E7E7;
+}
+*/
+
+.nav-item {
+    font-size: 2.5rem;
+}
+
+.jumbotron {
+    font-weight: 500;
+/*    background-color: #5a8ee2;*/
+}
+
+#first {
+    margin-top: 40px;
+}
+
+.jumbotron h2 {
+    font-size: 5rem;
+    font-weight: 300;
+}
+
+.jumbotron h3 {
+    font-weight: 500;
+    font-size: 3rem;
+    color: blue;
+}
+
+.jumbotron h4 {
+    text-align: left;
+    font-weight: 500;
+    font-size: 2rem;
+    margin-left: 75px;
+}
+
+.jumbotron ul {
+    text-align: left;
+    font-weight: 500;
+    font-size: 2rem;
+    list-style-type: circle;
+    margin-left: 130px;
+}
+
+#title {
+    font-size: 10rem;
+    font-family: 'Mina', sans-serif;
+    font-weight: bold;
+    color: blue;
+}
+
+section .row img {
+    margin: 0 0 30px;
+    width: 100%;
+    object-fit: contain;
+}
+
+section .row p {
+    text-align: center;
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+.col-md-6 {
+    margin: 0 0 30px;
+}
+
+footer {
+  font-size: 12px;
+  padding: 20px 0;
+}
+
+#last {
+    margin-bottom: 0px;
+}

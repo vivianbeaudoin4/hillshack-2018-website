@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>HillsHack</title>
+    <meta charset="utf-8"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="jquery.serialize-object.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="signup.css">
+    <link rel="icon" href="images/icon2018.jpg">
+</head>
+<body>
+    <header class="container">
+        <nav class="nav navbar-fixed-top navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item"><a href="index.html">Home</a></li>
+                    <li class="nav-item"><a href="schedule.html">Schedule</a></li>
+                    <li class="nav-item"><a href="faq.html">FAQ</a></li>
+                    <li class="nav-item"><a href="donate.html">Donate</a></li>
+                    <li class="nav-item"><a href="sponsors.html">Sponsors</a></li>
+                    <li class="nav-item active"><a href="signup.html">Sign Up</a></li>
+                    <li class="nav-item"><a href="contact.html">Contact</a></li>
+                </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class = "jumbotron">
+    	
+        <div class="container">
+            <div class="row text-center">
+                <h1>Sign Up</h1>
+            </div>
+  
+            <form id="test-form">
+                <div>
+                <p>First Name:</p>
+                <input type="text" name="First_Name" placeholder="" required/>
+                </div>
+
+                <div>
+                <p>Last Name:</p>
+                <input type="text" name="Last_Name" placeholder="" required/>
+                </div>
+
+                <div>
+                <p>Email:</p>
+                <input type="text" name="Email" placeholder="" required/>
+                </div>
+
+                <div>
+                <p>Grade:</p>
+                <select name="Grade" required>
+                <option value="">select</option>
+                <option value="8">8th</option>
+                <option value="9">9th</option>
+                <option value="10">10th</option>
+                <option value="11">11th</option>
+                <option value="12">12th</option>
+                </select>
+                </div>
+                    
+                <div>
+                <p>Can you bring your own laptop?</p>
+                    <input type="radio" name="Laptop" value="yes"> Yes
+                    <input type="radio" name="Laptop" value="no"> No
+                </div>
+                    
+                <div>
+                <p>Can you attend the whole hackathon?</p>
+                <select name="Attendance" required>
+                    <option value="">select</option>
+                    <option value="all">Yes</option>
+                    <option value="late for prom">No, I&#39m going to be late because of prom</option>
+                    <option value="leave early">No, I have to leave early</option>
+                </select>
+                </div>
+                    
+                <div>
+                <p>How much experience do you have in Computer Science?</p>
+                <select name="Experience" required>
+                    <option value="">select</option>
+                    <option value="none">none</option>
+                    <option value="little">little, at home or taking at Warren Hills</option>
+                    <option value="medium">medium, taking/taken intro to computer science</option>
+                    <option value="advanced">advanced, taking/taken AP computer science or advanced topics</option>
+                </select>
+                </div>
+                
+                <div>
+                <p>Are you a Warren Hills Student? HillsHack 2018 is only available to Warren Hills students.</p>
+                    <input type="radio" name="WarrenHills_Student" value="yes"> Yes
+                    <input type="radio" name="WarrenHills_Student" value="no"> No
+                </div>
+                
+                <div>
+                <p>Have you attended HillsHack before?</p>
+                    <input type="radio" name="Attended_Before" value="yes"> Yes
+                    <input type="radio" name="Attended_Before" value="no"> No
+                </div>
+                
+                <div>
+                <p>What&#39s your adult T-shirt size?</p>
+                <select name="Shirt_Size" required>
+                    <option value="">select</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                </select>
+                </div>
+                <br>
+
+                <div>
+                <button type="submit"id="submit-form">Submit</button>
+                </div>
+            </form>
+            <script>
+                var $form = $('form#test-form'),
+                url = 'https://script.google.com/macros/s/AKfycbyYXKbdxYw9Q7Hjral8-oh4_f_lVO4gKUPuqO8VpaRkY8VvtuI/exec'
+
+                $('#submit-form').on('click', function(e) 
+                {
+                e.preventDefault();
+                var jqxhr = $.ajax({
+                    url: url,
+                    method: "GET",
+                    dataType: "json",
+                    data: $form.serializeObject()
+                    }).success(
+                        $('form').replaceWith(
+                        "<div class='text-center'><h3>You have successfully signed up. See you June 9th!</h3></div>"
+                        )
+                    );
+                })
+            </script>
+            </div>
+    </section>
+    <footer class="container">
+        <div class="text-center">
+            <h4>Website by: Vivian Beaudoin and Samantha Monico</h4>
+        </div>
+    </footer>
+</body>
+</html>
