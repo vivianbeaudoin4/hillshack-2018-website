@@ -1,1 +1,2 @@
-"# hillshack-2018-website" 
+# Warren Hills Hackathon 2018 Website
+Visit on www.hillshack.org
